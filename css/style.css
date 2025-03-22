@@ -1,0 +1,303 @@
+/* === General === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #19191e;
+}
+
+/* === Logo page === */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 0;
+    /* Allow bubbles to wrap */
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(120s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+        0 0 50px #ff2d75,
+        0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.home-title {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f6c999;
+    font-size: 5rem;
+    z-index: 1;
+    pointer-events: none;
+    text-align: center;
+    text-shadow: 0 0 5px #f6c999, 0 0 10px #f6c999, 0 0 20px #f6c999, 0 0 40px #f6c999;
+    animation: shine 2s infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 5px #f6c99966, 0 0 10px #f6c99966, 0 0 20px #f6c99966, 0 0 40px #f6c99966;
+    }
+
+    100% {
+        text-shadow: 0 0 10px #f6c999, 0 0 20px #f6c99944, 0 0 40px #f6c99944, 0 0 80px #f6c99944;
+    }
+}
+
+/* === Content page === */
+.contents {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100vw;
+    height: 1000px;
+    position: relative;
+    background: #19191e;
+    z-index: 25;
+    padding-top: 20px;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 20px 0;
+    flex-direction: column;
+}
+
+/* === table of tools === */
+.contents-table .content-elements {
+    margin: 0;
+    padding: 0;
+    flex: 0 0 calc(33.33%-2rem);
+    min-width: 300px;
+    max-width: 400px;
+    margin: 18px 0;
+    width: 100%;
+}
+
+.content-elements {
+    list-style: none;
+    perspective: 1000px;
+}
+
+.contents-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 30px;
+    /* 与欢迎容器保持间距 */
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.content-elements a {
+    display: inline-block;
+    min-height: 12rem;
+    min-width: 280px;
+    margin: 0;
+    height: 12rem;
+    width: 100%;
+    padding: 20px;
+    background: #303035;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.content-elements a:hover {
+    text-shadow: 0 0 4px #f6c999;
+    transform: scale(1.05) translateZ(1px);
+}
+
+.content-elements a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #303035;
+    border-radius: 15px;
+    transition: 0.6s;
+    transform: scale(1);
+    z-index: -1;
+}
+
+.content-elements a:hover::before {
+    box-shadow: 0 0 14px 2px #f6c999;
+    transform: scale(1.05);
+}
+
+.content-elements a h1 {
+    color: #f6c999;
+    font-size: 30px;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.content-elements a p {
+    font-size: 18px;
+}
+
+/* === 添加导航栏 === */
+.nav {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    background: #303035;
+    padding: 1rem 2rem;
+    border-radius: 3px;
+    opacity: 0;
+    /* 默认隐藏 */
+    pointer-events: none;
+    /* 隐藏时不可交互 */
+    transition: opacity 0.3s;
+    z-index: 1000;
+    /* 确保在其他元素上方 */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    float: right;
+    margin-left: auto;
+    /* 右对齐链接 */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 1rem 1rem;
+    border-radius: 6px;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.2s ease;
+    position: relative;
+}
+
+/* 悬停效果：下划线动画 */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 悬停时文字和背景变化 */
+.nav-links a:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* 当前活动页样式 */
+.nav-links a.active {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo{
+    float: left;
+    font-size: 50px;
+    color: #f6c999;
+    font-family: "Miniver", sans-serif;
+}
+
+
+/* === welcome discription ===  */
+.welcome-container {
+    max-width: 900vw;
+    width: 100%;
+    margin: 40px auto 60px;
+    /* 上方间距40px，下方间距60px */
+    padding: 2rem;
+    text-align: center;
+    background: #303035;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        inset 0 8px 20px rgba(0, 0, 0, 0.4),
+        inset 0 -8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-container h2 {
+    color: #f49f8b;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-container p {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .content-elements a {
+        min-height: 10rem;
+        /* 小屏幕高度优化 */
+        padding: 15px;
+    }
+
+    .content-elements h1 {
+        font-size: 24px;
+    }
+
+    .content-elements p {
+        font-size: 16px;
+    }
+}
