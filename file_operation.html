@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>File Operation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code of the Day</title>
+    <style>
+        body {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            color: #50fa7b;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #ffb86c;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .code-container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            color: #f8f8f2;
+        }
+        .function {
+            color: #ff79c6;
+        }
+        .keyword {
+            color: #8be9fd;
+        }
+        .string {
+            color: #f1fa8c;
+        }
+        .comment {
+            color: #6272a4;
+        }
+        .spacer {
+            display: block;
+            height: 10px;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>File Operation</h1>
-</body>
-
-</html>
+    <h1>The Code of the Day</h1>
+    <div class="section-title">1.) Opening file syntax</div>
+    <div class="code-container">
+        <pre><code><span class="keyword">with</span> <span class="string">open("example.txt", "r")</span> <span class="keyword">as</span> subor:
+    <span class="keyword">def</span> <span class="function">examplefunction</span>(n):
+        m = n.readlines()</code></pre>
+    </div>
