@@ -3,11 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>File Operation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python File Operations Tutorial</title>
+    <!-- Prism CSS for syntax highlighting -->
+    <!-- <link rel="stylesheet" href="./css/highlight/styles/atom-one-dark.min.css">
+    <script src="./css/highlight/highlight.min.js"></script> -->
+    <link rel="stylesheet" href="./css/prism.css">
+    
 </head>
 
 <body>
-    <h1>File Operation</h1>
+    <div class="container">
+        <h1>Python File Operations Tutorial</h1>
+
+        <h2>Opening a File</h2>
+        <p>Use the open() function to work with files:</p>
+
+        <div class="code-block">
+            <pre><code class="language-python"># Open a file in read mode
+with open('example.txt', 'r') as file:
+    content = file.read()</code></pre>
+        </div>
+
+        <h2>Reading from a File</h2>
+        <p>Different methods for reading file content:</p>
+        <div class="code-block">
+            <pre>
+                <code class="python"># Read entire file
+content = file.read()
+
+# Read line by line
+for line in file:
+    print(line)
+
+# Read all lines into list
+lines = file.readlines()</code></pre>
+        </div>
+
+        <h2>Writing to a File</h2>
+        <p>Writing to files using different modes:</p>
+        <div class="code-block">
+            <pre><code class="python"># Write to a new file (overwrites existing)
+with open('new_file.txt', 'w') as file:
+    file.write("Hello, World!")
+
+# Append to existing file
+with open('existing.txt', 'a') as file:
+    file.write("\nNew content")</code></pre>
+        </div>
+        <div class="output" id="output"></div>
+    </div>
+
+    <!-- Prism JS for syntax highlighting -->
+    <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+    <script src="./js/prism.js"></script>
 </body>
 
 </html>
