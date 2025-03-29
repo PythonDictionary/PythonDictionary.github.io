@@ -13,33 +13,47 @@ body {
 }
 
 h1 {
-    color: #50fa7b;
-    margin-bottom: 20px;
+    color: #aaf0aac1;
+    font-size: 2rem;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .section-title {
     color: #ffb86c;
-    font-size: 1.5rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin: 2rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3a3a3a;
 }
 
 h3 {
-    margin-left: 0.5rem;
-    margin-bottom: 0rem;
-    color: lightcoral;
+    color: #66d9ef;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: 500;
 }
 
 .code-disc {
-    margin-left: 1rem;
+    color: #a9a9a9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 1rem 0 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid #3a3a3a;
 }
 
 .code-container {
-    background-color: #1e1e1e;
+    background-color: #2d2d2d;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     padding: 20px;
     width: 80%;
     max-width: 800px;
     overflow-x: auto;
+}
+
+.code-container p {
+    margin: 0;
 }

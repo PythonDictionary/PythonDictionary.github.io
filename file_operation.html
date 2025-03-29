@@ -5,59 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Operation</title>
-    <link rel="stylesheet" href="./css/prism.css"/>
+    <link rel="stylesheet" href="./css/prism.css" />
     <link rel="stylesheet" href="./css/subpage.css">
+    <style>
+        /* Additional flashcard styling */
+        .flashcard-container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 1px solid #3a3a3a;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>File Operation</h1>
-    <h2 class="section-title">Example file(example.txt)</h2>
-    <div class="code-container">
-        <p>040707 45.6 112 Horna Suca<p> 
-        <p>040716 34.8 98 Dolna Poruba - Horny Koniec</p>
-        <p>040718 74.3 219 Nimnica</p>
-        <p>040719 54.4 160 Chocholna - dolina</p>
-        <p>040722 131.1 389 Piestany</p>
-        <p>040802 21.7 61 Trencin</p>
-        <p>040804 139.0 430 Piestany</p>
-    </div>
-    <h2 class="section-title">1. Opening file syntax</h2>
+    <div class="flashcard-container">
+        <h1>File Operation</h1>
+        <h2 class="section-title">Example file(example.txt)</h2>
+        <div class="code-container">
+            <p>040707 45.6 112 Horna Suca</p>
+            <p>040716 34.8 98 Dolna Poruba - Horny Koniec</p>
+            <p>040718 74.3 219 Nimnica</p>
+            <p>040719 54.4 160 Chocholna - dolina</p>
+            <p>040722 131.1 389 Piestany</p>
+            <p>040802 21.7 61 Trencin</p>
+            <p>040804 139.0 430 Piestany</p>
+        </div>
+        <h2 class="section-title">1. Opening file syntax</h2>
 
-    <!-- read -->
-    <h3>read</h3>
-    <div class="code-container">
-        <pre><code class="language-python">with open("example.txt", "r") as subor:
-    m = subor.read():</code></pre>
-        <p>output:</p>
-        <p>"040707 45.6 112 Horna Suca<span style="color:yellow">\n</span>
-        040716 34.8 98 Dolna Poruba - Horny Koniec<span style="color:yellow">\n</span>
-        040718 74.3 219 Nimnica<span style="color:yellow">\n</span>
-        040719 54.4 160 Chocholna - dolina<span style="color:yellow">\n</span>
-        040722 131.1 389 Piestany<span style="color:yellow">\n</span>
-        040802 21.7 61 Trencin<span style="color:yellow">\n</span>
-        040804 139.0 430 Piestany"<p>
-    </div>
-    <p class="code-disc">Prečíta celý dokument a vráti ho ako reťazec so znakov novými riadkami.(\n)</p>
-    
-    <!-- readline -->
-    <h3>readline</h3>
-    <div class="code-container">
-        <pre><code class="language-python">with open("example.txt", "r") as subor:
-    m = subor.readlines()</code></pre>
-        <p>output:</p>
-        <p>"040707 45.6 112 Horna Suca\n"</p>
-    </div>
-    <p class="code-disc">precita iba jeden riatok</p>
+        <!-- read -->
+        <h3>read</h3>
+        <div class="code-container">
+            <pre><code class="language-python">with open("example.txt", "r") as subor:
+    m = subor.read()</code></pre>
+            <p>output:</p>
+            <p>"040707 45.6 112 Horna Suca<span style="color:yellow">\n</span>
+                040716 34.8 98 Dolna Poruba - Horny Koniec<span style="color:yellow">\n</span>
+                040718 74.3 219 Nimnica<span style="color:yellow">\n</span>
+                040719 54.4 160 Chocholna - dolina<span style="color:yellow">\n</span>
+                040722 131.1 389 Piestany<span style="color:yellow">\n</span>
+                040802 21.7 61 Trencin<span style="color:yellow">\n</span>
+                040804 139.0 430 Piestany"
+            <p>
+        </div>
+        <p class="code-disc">Prečíta celý dokument a vráti ho ako reťazec so znakov novými riadkami.(\n)</p>
 
-    <!-- readlines -->
-    <h3>readlines</h3>
-    <div class="code-container">
-        <pre><code class="language-python">with open("example.txt", "r") as subor:
+        <!-- readline -->
+        <h3>readline</h3>
+        <div class="code-container">
+            <pre><code class="language-python">with open("example.txt", "r") as subor:
+    m = subor.readline()</code></pre>
+            <p>output:</p>
+            <p>"040707 45.6 112 Horna Suca\n"</p>
+        </div>
+        <p class="code-disc">precita iba jeden riatok</p>
+
+        <!-- readlines -->
+        <h3>readlines</h3>
+        <div class="code-container">
+            <pre><code class="language-python">with open("example.txt", "r") as subor:
     m = subor.readlines()</code></pre>
-        <p>output:</p>
-        <p>['040707 45.6 112 Horna Suca\n', '040716 34.8 98 Dolna Poruba - Horny Koniec\n', '040718 74.3 219 Nimnica\n', '040719 54.4 160 Chocholna - dolina\n', '040722 131.1 389 Piestany\n', '040802 21.7 61 Trencin\n', '040804 139.0 430 Piestany']</p>
+            <p>output:</p>
+            <p>['040707 45.6 112 Horna Suca\n', '040716 34.8 98 Dolna Poruba - Horny Koniec\n', '040718 74.3 219
+                Nimnica\n', '040719 54.4 160 Chocholna - dolina\n', '040722 131.1 389 Piestany\n', '040802 21.7 61
+                Trencin\n', '040804 139.0 430 Piestany']</p>
+        </div>
+        <p class="code-disc">precita cely document a vrati list s jednotlivy riatkov</p>
+
+        <!-- wiritting  -->
+        <h2 class="section-title">2. Writing file syntax</h2>
+        <h3>writing mode</h3>
+        <div class="code-container">
+            <pre><code class="language-python">with open("example.txt", "w") as subor:
+    m = subor.write("content")</code></pre>
+        </div>
+        <p class="code-disc">vymaze vsetko co je v dokumente a napise "content"<br>ked document neexistuje tak vytvori novy a napise</p> 
+        
+
+        <h3>Append mode</h3>
+        <div class="code-container">
+            <pre><code class="language-python">with open("example.txt", "a") as subor:
+    m = subor.write("content")</code></pre>
+        </div>
+        <p class="code-disc">prida "content" na konci suboru , ked subor neexistuje tak vytvori novy a prida</p>
     </div>
-    <p class="code-disc">precita cely document a vrati list s jednotlivy riatkov</p>
 
     <script src="./js/prism.js"></script>
 </body>
