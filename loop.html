@@ -3,10 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loop</title>
+    <link rel="stylesheet" href="./css/prism.css" />
+    <link rel="stylesheet" href="./css/subpage.css">
+    <style>
+        /* Additional flashcard styling */
+        .flashcard-container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 1px solid #3a3a3a;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Loop</h1>
+    <div class="flashcard-container">
+        <h1>loop</h1>
+        <h2 class="section-title">for loop</h2>
+        <div class="code-container">
+            <pre><code class="language-python">for i in range(0, 10): # start(optional), end, step(optional)
+    print(i, end="")
+            </code></pre>
+            <p>output:<br>0123456789</p>
+        </div>
+        <p class="code-disc">for loop can iterate iterable object(e.g. list, string, sets, range())</p>
+        <p class="code-disc">range():<br> - create list of number from start to end...<br>- it will create list of number in interval &lt;start; end) which means parameter start is included and end is not</p>
+
+        <h2 class="section-title"> example of list</h2>
+        <div class="code-container">
+            <pre><code class="language-python">lst_of_color = ["red", "blue", "yellow", "green"]
+for color in lst_of_color:
+    print(color, end=" ")
+                    </code></pre>
+            <p>output:<br>red blue yellow green</p>
+        </div>
+
+        <h2 class="section-title"> enumerate</h2>
+        <div class="code-container">
+            <pre><code class="language-python">lst_of_color = ["red", "blue", "yellow", "green"]
+for idx, color in enumerate(lst_of_color):
+    print(idx, color)
+                            </code></pre>
+            <p>output:<br>0 red<br>1 blue<br>2 yellow<br>1 green</p>
+        </div>
+
+
+        <!-- wiritting  -->
+        <h2 class="section-title">while loop</h2>
+        <div class="code-container">
+            <pre><code class="language-python">while condition:
+    print("hello world")
+            </code></pre>
+        </div>
+        <p class="code-disc">while codition is true it will execute the code, when it becomes false it stops</p>
+
+    </div>
+
+    <script src="./js/prism.js"></script>
 </body>
+
 </html>
