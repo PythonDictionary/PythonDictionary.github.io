@@ -38,7 +38,89 @@ canvas.pack()
 root.mainloop()
             </code></pre>
         </div>
-        <p class="code-disc"></p>
+
+        <h2 class="section-title">some shapes</h2>
+        <div class="code-container">
+            <pre><code class="language-python">import tkinter as tk
+        
+root = tk.Tk()
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.pack()
+
+x1, y1,x2,y2 = 10, 10, 100, 100
+# create some shapes
+canvas.create_rectangle(x1, y1, x2, y2)
+canvas.create_arc(x1, y1, x2, y2)
+canvas.create_line(x1, y1, x2, y2)
+canvas.create_oval(x1, y1, x2, y2)
+canvas.create_text(x1, y1)
+
+# some common parameterts:
+# fill - inner color
+# outline - the line around the object 
+
+root.mainloop()
+        </code></pre>
+        </div>
+    
+    <h2 class="section-title">button</h2>
+    <div class="code-container">
+        <pre><code class="language-python">import tkinter as tk
+
+def my_funtion():
+    print("hello")
+        
+root = tk.Tk()
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.pack()
+
+btn = tk.Button(root, text='click', width=40, height=5, command=my_funtion)
+btn.place(x=65, y=100)
+
+root.mainloop()
+            </code></pre>
+    </div>
+
+    <h2 class="section-title">entry</h2>
+    <div class="code-container">
+        <pre><code class="language-python">import tkinter as tk
+    
+def get_entry_value():
+    text = entry.get() # Get text from entry widget
+    print("Text from entry:", text) # Do something with the value
+
+root = tk.Tk()
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.pack()
+
+# Create entry widget and place it on canvas
+entry = tk.Entry(canvas)
+entry.place(x=65, y=80)
+
+# Create button and place it on canvas
+button = tk.Button(canvas, text="Get Text", command=get_entry_value)
+button.place(x=65, y=100)
+
+root.mainloop()
+                </code></pre>
+    </div>
+
+    <h2 class="section-title">any click</h2>
+    <div class="code-container">
+        <pre><code class="language-python">import tkinter as tk
+        
+def my_funtion(event):
+    print("hello")
+        
+root = tk.Tk()
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.pack()
+
+root.bind("&lt;Key&gt;", my_funtion)
+
+root.mainloop()
+                    </code></pre>
+    </div>
 
 
     </div>

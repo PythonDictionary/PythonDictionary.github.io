@@ -36,8 +36,127 @@ function_name(parameter)
             </code></pre>
             <p>output:<br></p>
         </div>
-        <p class="code-disc"></p>
-       
+        <h2 class="section-title">Some useful functions </h2>
+        <h3>min, max</h3>
+        <div class="code-container">
+            <pre><code class="language-python">lst = [2,5,4,6,5]
+print(max(lst))
+print(min(lst))
+            </code></pre>
+            <p>output:<br></p>
+        </div>
+
+        <h3>split()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">words = "column1 column2 column3"
+words = words.split(" ")
+print(words)
+            </code></pre>
+            <p>output:<br>['column1', 'column2', 'column3']</p>
+        </div>
+        
+        <h3>enumerate()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">fruits = ["grape", "apple", "mango"]
+for i, j in enumerate(fruits):
+    print(i, j)
+            </code></pre>
+            <p>output:<br>0 grape<br>
+            1 apple<br>
+            2 mango</p>
+        </div>
+
+        <h3>round()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">num = (4+5+7/3)
+rounded_num=round(num, 2)
+print("The raw average is:", num)
+print("The rounded average is:", rounded_num)
+            </code></pre>
+            <p>output:<br>The raw average is: 11.333333333333334<br>
+            The rounded average is: 11.33</p>
+        </div>
+
+        <h3>append()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">x = [1, 2, 3, 4]
+x.append(5)
+print(x)
+            </code></pre>
+            <p>output:<br>[1, 2, 3, 4, 5]</p>
+        </div>
+
+        <h3>range()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">for i in range(5): # range(start, end) - &lt;start; end)
+    print(i, end=" ")
+            </code></pre>
+            <p>output:<br>0 1 2 3 4</p>
+        </div>
+
+        <h3>strip()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">st = "Python Tutorial\n"
+st.strip("\n")
+print(st)
+            </code></pre>
+            <p>output:<br>Python Tutorial</p>
+        </div>
+
+        <h3>abs()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">neg = 4 - 9
+pos = abs(neg)
+print(pos)
+            </code></pre>
+            <p>output:<br>5</p>
+        </div>
+
+        <h3>upper(), lower(), capitalize()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">y = "Python tutorial"
+y = y.upper()
+print(y)
+
+y = y.lower()
+print(y)
+
+y = y.capitalize()
+print(y)
+                    </code></pre>
+            <p>output:<br>PYTHON TUTORIAL<br>python tutorial<br>Python tutorial</p>
+        </div>
+
+        <h3>sorted()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">f = [1,3,9,3] 
+print(sorted(f, reverse=True)) # Descending
+print(sorted(f)) # Ascending (default)
+            </code></pre>
+            <p>output:<br>[9, 4, 3, 1]<br>
+            [1, 3, 4, 9]</p>
+        </div>
+
+        <h3>join()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">a = ["Python", "tutorial", "on", "MUO"]
+a = " ".join(a)
+print(a)
+            </code></pre>
+            <p>output:<br>Python tutorial on MUO</p>
+        </div>
+
+        <h3>replace()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">columns = ["Cart_name", "First_name", "Last_name"]
+for i in columns:
+	i = i.replace("_", " ")
+	print(i)
+            </code></pre>
+            <p>output:<br>Cart name<br>
+            First name<br>
+            Last name</p>
+        </div>
 
     </div>
 
