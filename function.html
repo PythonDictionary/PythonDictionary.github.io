@@ -198,6 +198,22 @@ print(any(l)) # if list contains True value then it return True
             <p>output:<br>False<br>True</p>
         </div>
 
+        <h3>Calculate_date</h3>
+        <div class="code-container">
+            <pre><code class="language-python">from datetime import datetime
+def date_calculator(date1, date2):
+    date1 = datetime.strptime(date1, "%d%m")
+    date2 = datetime.strptime(date2, "%d%m")
+    delta = date2 - date1
+    return delta.days
+
+print(date_calculator("0101", "0202"))  # Example usage
+            </code></pre>
+            <p>output:
+                <br>31</p>
+            </p>
+        </div>
+
     </div>
 
     <script src="./js/prism.js"></script>
