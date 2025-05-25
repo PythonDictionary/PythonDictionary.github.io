@@ -158,6 +158,34 @@ for i in columns:
             Last name</p>
         </div>
 
+        <h3>map()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">s = ['1', '2', '3', '4']
+res = map(int, s) # convert all numbers in the list into int
+print(list(res))
+
+# you can also create your own function to proces with list 
+a = [1, 2, 3, 4]
+# Using custom function in "function" parameter
+# This function is simply doubles the provided number
+def double(val):
+    return val*2
+
+res = list(map(double, a))
+print(res)
+            </code></pre>
+            <p>output:<br>[1, 2, 3, 4]<br>[2, 4, 6, 8]</p>
+        </div>
+
+        <h3>all(), any()</h3>
+        <div class="code-container">
+            <pre><code class="language-python">print(all([True, True, False])) # check the list whether all is True
+l = [False, False, True, False, False]
+print(any(l)) # if list contains True value then it return True
+            </code></pre>
+            <p>output:<br>False<br>True</p>
+        </div>
+
     </div>
 
     <script src="./js/prism.js"></script>

@@ -122,6 +122,27 @@ root.mainloop()
                     </code></pre>
     </div>
 
+    <h2 class="section-title">Animation</h2>
+    <div class="code-container">
+        <pre><code class="language-python">import tkinter as tk
+            
+root = tk.Tk()
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.pack()
+
+def Animation()
+    canvas.deleete("all")
+    # your animation code
+    # maybe you need to put some condition to stop animation
+    if condition:
+        root.after(50, Animation) # recall this function again
+
+root.bind("&lt;Key&gt;",lambda e: Animation)
+
+root.mainloop()
+                        </code></pre>
+    </div>
+
 
     </div>
 
