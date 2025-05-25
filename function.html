@@ -36,6 +36,18 @@ function_name(parameter)
             </code></pre>
             <p>output:<br></p>
         </div>
+	    
+        <h2 class="section-title">Function with datetime :</h2>
+        <div class="code-container">
+            <pre><code class="language-python">def calculate_time(date1, date2)::#you can add more parameters(seperate ,)
+    date1 = datetime.strptime(date1, "%d%m")
+    date2 = datetime.strptime(date2, "%d%m")
+    delta = date2 - date1
+    return delta.days
+	</code></pre>
+            <p>output:<br></p>
+        </div>
+	    
         <h2 class="section-title">Some useful functions </h2>
         <h3>min, max</h3>
         <div class="code-container">
